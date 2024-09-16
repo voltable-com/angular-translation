@@ -225,11 +225,18 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1>{{ 'title' | translate }}</h1>
+      <p>{{ 'congratulation' | translate }} 🎉</p>
+      <app-card />
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
+        <div class="title">
+          <h1>{{ 'demo.title' | translate }}</h1>
+          <span>Switch languages at runtime: </span>
+          <button (click)="switchLanguage('en')">en</button>
+          <button (click)="switchLanguage('ro')">ro</button>
+      </div>
       <div class="pill-group">
         @for (item of [
           { title: 'Explore the Docs', link: 'https://angular.dev' },
